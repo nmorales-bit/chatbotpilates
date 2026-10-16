@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101411">
+  <title>Estudio de Pilates | Asistente</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="aplicacion">
+    <header class="encabezado">
+      <div class="marca">
+        <div class="logo" aria-hidden="true">P</div>
+        <div>
+          <h1>estudio de pilates</h1>
+          <p>Tu bienestar, a tu ritmo.</p>
+        </div>
+      </div>
+
+      <div class="estado">
+        <span class="punto"></span>
+        Asistente disponible
+      </div>
+    </header>
+
+    <section class="paneles">
+      <section class="panel zona-chatbot" aria-labelledby="titulo-chat">
+        <div class="panel-titulo">
+          <div>
+            <span class="etiqueta">ASISTENTE VIRTUAL</span>
+            <h2 id="titulo-chat">zona de chatbot</h2>
+          </div>
+          <span class="icono-chat" aria-hidden="true">✳</span>
+        </div>
+
+        <div id="chat" class="chat" aria-live="polite"
+             aria-relevant="additions text"></div>
+
+        <div id="estado-conversacion" class="estado-conversacion">
+          Cargando asistente...
+        </div>
+      </section>
+
+      <aside class="panel registro" aria-labelledby="titulo-registro">
+        <div class="panel-titulo">
+          <div>
+            <span class="etiqueta">TU ACTIVIDAD</span>
+            <h2 id="titulo-registro">registro de conversaciones</h2>
+          </div>
+          <span class="icono-chat" aria-hidden="true">◷</span>
+        </div>
+
+        <div id="registro" class="lista-registro" aria-live="polite">
+          <p class="vacio">Tus elecciones aparecerán acá a medida que avances.</p>
+        </div>
+
+        <div class="resumen">
+          <h3>Resumen de tu reserva</h3>
+
+          <div class="dato">
+            <span>Cliente</span>
+            <strong id="resumen-nombre">Sin registrar</strong>
+          </div>
+
+          <div class="dato">
+            <span>Días</span>
+            <strong id="resumen-dias">Sin elegir</strong>
+          </div>
+
+          <div class="dato">
+            <span>Horario</span>
+            <strong id="resumen-horario">Sin elegir</strong>
+          </div>
+
+          <div class="dato">
+            <span>Plan</span>
+            <strong id="resumen-plan">Sin elegir</strong>
+          </div>
+
+          <div class="dato total">
+            <span>Precio mensual</span>
+            <strong id="resumen-precio">$0</strong>
+          </div>
+        </div>
+      </aside>
+
+      <section class="panel opciones" aria-labelledby="titulo-opciones">
+        <div class="panel-titulo">
+          <div>
+            <span class="etiqueta">INTERACCIÓN</span>
+            <h2 id="titulo-opciones">ingreso de opciones</h2>
+          </div>
+          <span class="icono-chat" aria-hidden="true">⌘</span>
+        </div>
+
+        <p id="texto-opciones" class="ayuda">
+          Seleccioná una opción para comenzar.
+        </p>
+
+        <form id="formulario" class="formulario" hidden novalidate>
+          <label id="etiqueta-entrada" for="campo-entrada"></label>
+          <input id="campo-entrada" type="text" autocomplete="name"
+                 maxlength="80">
+          <p id="error-entrada" class="error" role="alert"></p>
+
+          <button type="submit" class="boton boton-principal">
+            Guardar
+          </button>
+        </form>
+
+        <nav id="botones-opciones" class="botones-opciones"
+             aria-label="Opciones de navegación"></nav>
+
+        <p class="nota">
+          Tus elecciones se conservan durante esta sesión.
+        </p>
+      </section>
+    </section>
+
+    <footer>
+      <span>ESTUDIO DE PILATES</span>
+      <span>Movimiento · Equilibrio · Bienestar</span>
+    </footer>
+  </main>
+
+  <p id="mensaje-error" hidden
+     data-text="Abrí el proyecto con Live Server o un servidor local para que pueda leer arbol_decision.json"></p>
+</body>
+</html>

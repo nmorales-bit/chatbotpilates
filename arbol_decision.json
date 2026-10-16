@@ -1,0 +1,346 @@
+{
+  "inicio": "menu_principal",
+  "nodos": [
+    {
+      "id": "menu_principal",
+      "texto": "¡Hola! Bienvenido/a al estudio de pilates. Soy tu asistente virtual y voy a ayudarte a organizar tus clases. ¿Qué te gustaría hacer?",
+      "ayuda": "Elegí una opción para comenzar. Podés regresar a este menú cuando quieras.",
+      "opciones": [
+        {
+          "texto": "1. Registrar cliente",
+          "siguiente": "registro_cliente"
+        },
+        {
+          "texto": "2. Elegir días y horarios",
+          "siguiente": "elegir_dias"
+        },
+        {
+          "texto": "3. Consultar promociones y precios",
+          "siguiente": "elegir_promocion"
+        },
+        {
+          "texto": "Ver mi resumen",
+          "siguiente": "resumen"
+        },
+        {
+          "texto": "Terminar conversación",
+          "siguiente": "confirmar_salida"
+        }
+      ]
+    },
+    {
+      "id": "registro_cliente",
+      "texto": "¡Vamos a registrar tus datos! Escribí tu nombre y apellido para personalizar tu experiencia.",
+      "ayuda": "Podés volver al menú cuando quieras.",
+      "entrada": {
+        "etiqueta": "Nombre y apellido",
+        "tipo": "text",
+        "autocomplete": "name",
+        "placeholder": "Ej.: María González",
+        "maxLength": 80
+      },
+      "opciones": [
+        {
+          "texto": "Guardar nombre y apellido",
+          "siguiente": "menu_principal",
+          "accion": "guardar_nombre",
+          "estilo": "principal"
+        },
+        {
+          "texto": "Volver al menú",
+          "siguiente": "menu_principal"
+        }
+      ]
+    },
+    {
+      "id": "elegir_dias",
+      "texto": "¿Qué días preferís venir a pilates? Podés seleccionar varios. Si ya elegiste un plan, tendrás que seleccionar exactamente la cantidad de días que corresponde a tus clases semanales.",
+      "ayuda": "Tocá un día para seleccionarlo. Si lo volvés a tocar, se quitará de la selección.",
+      "opciones": [
+        {
+          "texto": "Lunes",
+          "siguiente": "elegir_dias",
+          "accion": "dia:Lunes"
+        },
+        {
+          "texto": "Martes",
+          "siguiente": "elegir_dias",
+          "accion": "dia:Martes"
+        },
+        {
+          "texto": "Miércoles",
+          "siguiente": "elegir_dias",
+          "accion": "dia:Miércoles"
+        },
+        {
+          "texto": "Jueves",
+          "siguiente": "elegir_dias",
+          "accion": "dia:Jueves"
+        },
+        {
+          "texto": "Viernes",
+          "siguiente": "elegir_dias",
+          "accion": "dia:Viernes"
+        },
+        {
+          "texto": "Sábado",
+          "siguiente": "elegir_dias",
+          "accion": "dia:Sábado"
+        },
+        {
+          "texto": "Quitar todos los días",
+          "siguiente": "elegir_dias",
+          "accion": "limpiar_dias"
+        },
+        {
+          "texto": "Continuar a horarios",
+          "siguiente": "elegir_horarios",
+          "accion": "continuar_dias",
+          "estilo": "principal"
+        },
+        {
+          "texto": "Elegir promoción",
+          "siguiente": "elegir_promocion"
+        },
+        {
+          "texto": "Volver al menú",
+          "siguiente": "menu_principal"
+        }
+      ]
+    },
+    {
+      "id": "validar_dias_vacios",
+      "texto": "Todavía no elegiste ningún día. Seleccioná al menos un día de la semana para continuar.",
+      "ayuda": "Podés seleccionar uno o varios días.",
+      "opciones": [
+        {
+          "texto": "Elegir días",
+          "siguiente": "elegir_dias"
+        },
+        {
+          "texto": "Volver al menú",
+          "siguiente": "menu_principal"
+        }
+      ]
+    },
+    {
+      "id": "validar_dias_plan",
+      "texto": "La cantidad de días seleccionados no coincide con tu plan. Por ejemplo, si elegiste 3 clases semanales, necesitás seleccionar exactamente 3 días diferentes. ¿Qué querés hacer?",
+      "ayuda": "Corregí tus días o elegí otra promoción.",
+      "opciones": [
+        {
+          "texto": "Corregir días",
+          "siguiente": "elegir_dias"
+        },
+        {
+          "texto": "Cambiar promoción",
+          "siguiente": "elegir_promocion"
+        },
+        {
+          "texto": "Quitar plan y empezar de nuevo",
+          "siguiente": "elegir_promocion",
+          "accion": "limpiar_plan"
+        },
+        {
+          "texto": "Volver al menú",
+          "siguiente": "menu_principal"
+        }
+      ]
+    },
+    {
+      "id": "elegir_horarios",
+      "texto": "¡Perfecto! Ahora elegí los horarios que te resulten cómodos. Podés seleccionar varios horarios disponibles.",
+      "ayuda": "Los horarios son ejemplos. La disponibilidad real debe confirmarse con el estudio.",
+      "opciones": [
+        {
+          "texto": "08:00",
+          "siguiente": "elegir_horarios",
+          "accion": "horario:08:00"
+        },
+        {
+          "texto": "09:00",
+          "siguiente": "elegir_horarios",
+          "accion": "horario:09:00"
+        },
+        {
+          "texto": "10:00",
+          "siguiente": "elegir_horarios",
+          "accion": "horario:10:00"
+        },
+        {
+          "texto": "11:00",
+          "siguiente": "elegir_horarios",
+          "accion": "horario:11:00"
+        },
+        {
+          "texto": "14:00",
+          "siguiente": "elegir_horarios",
+          "accion": "horario:14:00"
+        },
+        {
+          "texto": "15:00",
+          "siguiente": "elegir_horarios",
+          "accion": "horario:15:00"
+        },
+        {
+          "texto": "16:00",
+          "siguiente": "elegir_horarios",
+          "accion": "horario:16:00"
+        },
+        {
+          "texto": "17:00",
+          "siguiente": "elegir_horarios",
+          "accion": "horario:17:00"
+        },
+        {
+          "texto": "Quitar todos los horarios",
+          "siguiente": "elegir_horarios",
+          "accion": "limpiar_horarios"
+        },
+        {
+          "texto": "Continuar",
+          "siguiente": "elegir_promocion",
+          "accion": "continuar_horarios",
+          "estilo": "principal"
+        },
+        {
+          "texto": "Volver a elegir días",
+          "siguiente": "elegir_dias"
+        },
+        {
+          "texto": "Volver al menú",
+          "siguiente": "menu_principal"
+        }
+      ]
+    },
+    {
+      "id": "validar_horarios_vacios",
+      "texto": "Todavía no elegiste ningún horario. Seleccioná al menos uno para continuar.",
+      "ayuda": "Podés elegir otro horario o regresar al menú.",
+      "opciones": [
+        {
+          "texto": "Elegir horarios",
+          "siguiente": "elegir_horarios"
+        },
+        {
+          "texto": "Volver a elegir días",
+          "siguiente": "elegir_dias"
+        },
+        {
+          "texto": "Volver al menú",
+          "siguiente": "menu_principal"
+        }
+      ]
+    },
+    {
+      "id": "elegir_promocion",
+      "texto": "¡Ahora elegí tu plan! Los precios son mensuales y de ejemplo. La cantidad de días elegidos debe coincidir con las clases semanales del plan.",
+      "ayuda": "Si cambiás de plan, revisaremos que coincida con los días seleccionados.",
+      "opciones": [
+        {
+          "texto": "1 clase por semana — $18.000/mes",
+          "siguiente": "resumen",
+          "accion": "plan:1:Plan de 1 clase semanal:18000"
+        },
+        {
+          "texto": "2 clases por semana — $32.000/mes",
+          "siguiente": "resumen",
+          "accion": "plan:2:Plan de 2 clases semanales:32000"
+        },
+        {
+          "texto": "3 clases por semana — $42.000/mes",
+          "siguiente": "resumen",
+          "accion": "plan:3:Plan de 3 clases semanales:42000"
+        },
+        {
+          "texto": "4 clases por semana — $50.000/mes",
+          "siguiente": "resumen",
+          "accion": "plan:4:Plan de 4 clases semanales:50000"
+        },
+        {
+          "texto": "Quitar plan seleccionado",
+          "siguiente": "elegir_promocion",
+          "accion": "limpiar_plan"
+        },
+        {
+          "texto": "Volver a elegir días",
+          "siguiente": "elegir_dias"
+        },
+        {
+          "texto": "Volver a elegir horarios",
+          "siguiente": "elegir_horarios"
+        },
+        {
+          "texto": "Volver al menú",
+          "siguiente": "menu_principal"
+        }
+      ]
+    },
+    {
+      "id": "resumen",
+      "texto": "¡Listo! Podés revisar tus datos en el panel de resumen. Verificá que tu nombre, tus días, tus horarios y el precio del plan sean correctos. ¿Querés consultar el resumen o cambiar algo?",
+      "ayuda": "El resumen se actualiza con tus elecciones actuales.",
+      "opciones": [
+        {
+          "texto": "Mostrar resumen completo",
+          "siguiente": "resumen",
+          "accion": "confirmar"
+        },
+        {
+          "texto": "Cambiar nombre",
+          "siguiente": "registro_cliente"
+        },
+        {
+          "texto": "Cambiar días",
+          "siguiente": "elegir_dias"
+        },
+        {
+          "texto": "Cambiar horarios",
+          "siguiente": "elegir_horarios"
+        },
+        {
+          "texto": "Cambiar promoción",
+          "siguiente": "elegir_promocion"
+        },
+        {
+          "texto": "Volver al menú principal",
+          "siguiente": "menu_principal"
+        },
+        {
+          "texto": "Terminar conversación",
+          "siguiente": "confirmar_salida"
+        }
+      ]
+    },
+    {
+      "id": "confirmar_salida",
+      "texto": "¿Querés terminar la conversación? Si todavía necesitás hacer cambios, podés volver al menú principal.",
+      "ayuda": "La conversación solo finalizará cuando confirmes.",
+      "opciones": [
+        {
+          "texto": "Sí, terminar conversación",
+          "siguiente": "conversacion_finalizada",
+          "accion": "terminar",
+          "estilo": "principal"
+        },
+        {
+          "texto": "No, volver al menú",
+          "siguiente": "menu_principal"
+        }
+      ]
+    },
+    {
+      "id": "conversacion_finalizada",
+      "texto": "¡Gracias por comunicarte con el estudio de pilates! La conversación ha finalizado. Cuando quieras, podés comenzar una nueva.",
+      "ayuda": "Elegí volver a empezar si deseás realizar otra consulta.",
+      "opciones": [
+        {
+          "texto": "Volver a empezar",
+          "siguiente": "menu_principal",
+          "accion": "reiniciar",
+          "estilo": "principal"
+        }
+      ]
+    }
+  ]
+}
